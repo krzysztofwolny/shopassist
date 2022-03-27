@@ -1,11 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 
+import ListsScreen from './screens/ListsScreen';
+
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Welcome to Shopassist</Text>
-      <StatusBar style="auto" />
+      <ListsScreen />
     </View>
   );
 }

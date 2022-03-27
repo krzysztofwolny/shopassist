@@ -1,12 +1,23 @@
 import React from 'react';
-import { View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
-const ShopsScreen = () => {
-    return (
-        <View>
-
-        </View>
-    );
+interface ShopsScreenProps {
+    content: {}
 };
 
-export default ShopsScreen
+const ShopsScreen: React.FC<ShopsScreenProps> = props => {
+
+  return (
+    <View style={styles.compStyles}>
+        
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+    compStyles: {
+        padding: 20
+    }
+});
+
+export default ShopsScreen;

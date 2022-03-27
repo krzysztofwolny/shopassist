@@ -1,11 +1,11 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 
-interface ComponentNameProps {
+interface StatsScreenProps {
     content: {}
 };
 
-const ComponentName: React.FC<ComponentNameProps> = props => {
+const StatsScreen: React.FC<StatsScreenProps> = props => {
 
   return (
     <View style={styles.compStyles}>
@@ -20,4 +20,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default ComponentName;
+export default StatsScreen;
