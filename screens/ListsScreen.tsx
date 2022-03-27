@@ -9,7 +9,7 @@ const ListsScreen: React.FC<ListsScreenProps> = props => {
 
   return (
     <View style={styles.compStyles}>
-        <Text>This is Lists screen</Text>
+        <Text>This is Lists screen yea</Text>
     </View>
   );
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, Text } from 'react-native';
 
 interface StatsScreenProps {
     content: {}
@@ -9,7 +9,7 @@ const StatsScreen: React.FC<StatsScreenProps> = props => {
 
   return (
     <View style={styles.compStyles}>
-        
+        <Text>Stats</Text>
     </View>
   );
 };
