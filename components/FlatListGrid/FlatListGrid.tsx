@@ -6,7 +6,7 @@ import ShopDataInterface from '../../dataInterfaces/shopDataInterface';
 interface FlatListGridProps {
     FirstItem: React.FC;
     Item: React.FC<ShopDataInterface>;
-    data: { itemId: number; itemName: string; }[];
+    data: ShopDataInterface[] | [];
 };
 
 const FlatListGrid: React.FC<FlatListGridProps> = props => {
