@@ -1,26 +1,40 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { StyleSheet, View, FlatList } from 'react-native';
 
-import ShopDataInterface from '../../dataInterfaces/shopDataInterface';
+import {ShopsScreenContext} from '../../screens/ShopsScreen';
 
-interface FlatListGridProps {
-    FirstItem: React.FC;
-    Item: React.FC<ShopDataInterface>;
-    data: ShopDataInterface[] | [];
-};
+interface FlatListNavProps {
+    navigation: {
+        [key: string]: (arg0: string) => {}
+    }
+}
 
-const FlatListGrid: React.FC<FlatListGridProps> = props => {
-  const { FirstItem, Item, data } = props;
+const FlatListGrid: React.FC<FlatListNavProps> = (props) => {
+  const context = useContext(ShopsScreenContext);
+  let newData, FirstItem, Item, data;
 
-  const newData = [...data];
-  newData.unshift({ itemId: 0, itemName: 'add' });
+  if(context) {
+    FirstItem = context.FirstItem;
+    Item = context.Item;
+    data = context.data;
+  }
+
+  if(context && context.data) {
+    newData = [...context.data];
+    newData.unshift({ itemId: 0, itemName: 'add' });
+  }
+
+  const navigationHandler = () => {
+    props.navigation.navigate('addShop')
+  }
 
   return (
+    <View style={styles.mainView}>
         <FlatList
             data={newData}
             renderItem={({ item, index }) => {
                 if(index === 0) {
-                    return <FirstItem />
+                    return <FirstItem navigation={navigationHandler}/>
                 } else {
                     return <Item itemId={item.itemId} itemName={item.itemName} />
                 }
@@ -28,7 +42,17 @@ const FlatListGrid: React.FC<FlatListGridProps> = props => {
             numColumns={2}
             keyExtractor={(item, index) => index.toString()}
         />
+    </View>
   );
 };
+
+const styles = StyleSheet.create({
+    mainView: {
+        flex: 1,
+        justifyContent: 'center',
+        backgroundColor: 'white',
+        padding: 5,
+    }
+});
 
 export default FlatListGrid;
