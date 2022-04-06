@@ -7,13 +7,11 @@ import FlatListGrid from '../components/FlatListGrid/FlatListGrid';
 import ShopItem from '../components/ShopItem/ShopItem';
 import AddShopItem from '../components/AddShopItem/AddShopItem';
 import AddShopScreen from './AddShopScreen';
+import { ShopsScreenContext } from './ShopsScreenContext';
 
 import globalStateInterface from '../dataInterfaces/globalStateInterface';
-import FlatListGridProps from '../dataInterfaces/FlatListGridPropsForShops';
 
 const Stack = createNativeStackNavigator();
-
-export const ShopsScreenContext = React.createContext<FlatListGridProps | undefined>(undefined);
 
 const ShopsScreen: React.FC = () => {
   const shopsState = useSelector((state: globalStateInterface) => state.shops);

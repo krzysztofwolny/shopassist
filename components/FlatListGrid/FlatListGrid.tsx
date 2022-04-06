@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { StyleSheet, View, FlatList } from 'react-native';
 
-import {ShopsScreenContext} from '../../screens/ShopsScreen';
+import {ShopsScreenContext} from '../../screens/ShopsScreenContext';
 
 interface FlatListNavProps {
     navigation: {
