@@ -1,16 +1,34 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity } from 'react-native';
+import productTypesInterface from '../../../dataInterfaces/productTypesInterface';
 
 interface ShopDepartmentListItemProps {
-    content: {}
+  item: productTypesInterface, 
+  index: number, 
+  move: () => {}, 
+  moveEnd: () => {}, 
+  isActive: boolean
 };
 
 const ShopDepartmentListItem: React.FC<ShopDepartmentListItemProps> = props => {
+  const { item, index, move, moveEnd, isActive } = props;
 
   return (
-    <View style={styles.compStyles}>
-        
-    </View>
+    <TouchableOpacity
+        style={{ 
+          height: 100, 
+          backgroundColor: isActive ? 'blue' : 'grey',
+          alignItems: 'center', 
+          justifyContent: 'center' 
+        }}
+        onLongPress={move}
+        onPressOut={moveEnd}>
+        <Text style={{ 
+          fontWeight: 'bold', 
+          color: 'white',
+          fontSize: 32,
+        }}>{item.productTypeName}</Text>
+      </TouchableOpacity>
   );
 };
 

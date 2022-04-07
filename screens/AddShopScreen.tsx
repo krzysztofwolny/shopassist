@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { StyleSheet, View, Text, Button, TextInput } from 'react-native';
 
+import ShopDepartmentList from '../components/ShopDepartmentList/ShopDepartmentList';
+
 import { addShop } from '../stores/shops/shopsActions';
 
 import globalStateInterface from '../dataInterfaces/globalStateInterface';
@@ -30,6 +32,7 @@ const AddShopScreen: React.FC<AddShopScreenProps> = props => {
           value={shopNameInput}
           placeholder="Enter Shop Name"
         />
+        <ShopDepartmentList />
         <Button title='Save' onPress={saveShopHandler}>Save</Button>
     </View>
   );
