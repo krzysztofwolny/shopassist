@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, LogBox } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Provider } from 'react-redux';
@@ -11,6 +11,8 @@ import shopsReducer from './stores/shops/shopsReducer';
 import ListsScreen from './screens/ListsScreen';
 import ShopsScreen from './screens/ShopsScreen';
 import StatsScreen from './screens/StatsScreen';
+
+LogBox.ignoreLogs(['Warning: isMounted(...) is deprecated', 'Animated: `useNativeDriver` was not specified. This is a required option and must be explicitly set to `true` or `false`']);
 
 const composeEnhancers = compose;
 

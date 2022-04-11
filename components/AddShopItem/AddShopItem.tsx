@@ -1,4 +1,4 @@
-import React, { ReactPropTypes } from 'react';
+import React from 'react';
 import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 import { gridItemStyles } from '../../reusableStyles/gridItemStyles';
 

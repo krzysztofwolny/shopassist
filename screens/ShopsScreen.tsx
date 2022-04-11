@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { useSelector } from 'react-redux';
 import { StyleSheet, View, Text } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -20,6 +20,10 @@ const ShopsScreen: React.FC = () => {
     Item: ShopItem,
     data: shopsState
   };
+
+  useEffect(() => {
+    console.log('shopsstate', shopsState)
+  }, [shopsState])
 
   return (
     <ShopsScreenContext.Provider value={PropsForGrid}>
